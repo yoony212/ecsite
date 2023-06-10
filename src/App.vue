@@ -1,26 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <ec-header></ec-header>
+  <cloth-list></cloth-list>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ecHeader from './components/ecHeader.vue';
+import clothList from './components/clothList.vue';
+
+import 'normalize.css';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    ecHeader,
+    clothList,
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
