@@ -2,7 +2,7 @@
   <header>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-2 d-flex align-items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="1.5em"

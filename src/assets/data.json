@@ -1,0 +1,125 @@
+{
+  "clothes": [
+    {
+      "title": "cloth1",
+      "image": "../../assets/example/example.png",
+      "subImg1": "../../assets/example/example.png",
+      "subImg2": "../../assets/example/example.png",
+      "subImg3": "../../assets/example/example.png",
+      "subImg4": "../../assets/example/example.png",
+      "description": "asdfasdfasdfasdfasdfasdfasdf",
+      "genre": 1,
+      "id": 1
+    },
+    {
+      "title": "cloth2",
+      "image": "../../assets/example/example.png",
+      "subImg1": "../../assets/example/example.png",
+      "subImg2": "../../assets/example/example.png",
+      "subImg3": "../../assets/example/example.png",
+      "subImg4": "../../assets/example/example.png",
+      "description": "asdfasdfasdfasdfasdfasdfasdf",
+      "genre": 2,
+      "id": 2
+    },
+    {
+      "title": "cloth3",
+      "image": "../../assets/example/example.png",
+      "subImg1": "../../assets/example/example.png",
+      "subImg2": "../../assets/example/example.png",
+      "subImg3": "../../assets/example/example.png",
+      "subImg4": "../../assets/example/example.png",
+      "description": "asdfasdfasdfasdfasdfasdfasdf",
+      "genre": 3,
+      "id": 3
+    },
+    {
+      "title": "cloth4",
+      "image": "../../assets/example/example.png",
+      "subImg1": "../../assets/example/example.png",
+      "subImg2": "../../assets/example/example.png",
+      "subImg3": "../../assets/example/example.png",
+      "subImg4": "../../assets/example/example.png",
+      "description": "asdfasdfasdfasdfasdfasdfasdf",
+      "genre": 4,
+      "id": 4
+    },
+    {
+      "title": "cloth5",
+      "image": "../../assets/example/example.png",
+      "subImg1": "../../assets/example/example.png",
+      "subImg2": "../../assets/example/example.png",
+      "subImg3": "../../assets/example/example.png",
+      "subImg4": "../../assets/example/example.png",
+      "description": "asdfasdfasdfasdfasdfasdfasdf",
+      "genre": 5,
+      "id": 5
+    },
+    {
+      "title": "cloth6",
+      "image": "../../assets/example/example.png",
+      "subImg1": "../../assets/example/example.png",
+      "subImg2": "../../assets/example/example.png",
+      "subImg3": "../../assets/example/example.png",
+      "subImg4": "../../assets/example/example.png",
+      "description": "asdfasdfasdfasdfasdfasdfasdf",
+      "genre": 1,
+      "id": 6
+    },
+    {
+      "title": "cloth7",
+      "image": "../../assets/example/example.png",
+      "subImg1": "../../assets/example/example.png",
+      "subImg2": "../../assets/example/example.png",
+      "subImg3": "../../assets/example/example.png",
+      "subImg4": "../../assets/example/example.png",
+      "description": "asdfasdfasdfasdfasdfasdfasdf",
+      "genre": 2,
+      "id": 7
+    },
+    {
+      "title": "cloth8",
+      "image": "../../assets/example/example.png",
+      "subImg1": "../../assets/example/example.png",
+      "subImg2": "../../assets/example/example.png",
+      "subImg3": "../../assets/example/example.png",
+      "subImg4": "../../assets/example/example.png",
+      "description": "asdfasdfasdfasdfasdfasdfasdf",
+      "genre": 3,
+      "id": 8
+    },
+    {
+      "title": "cloth9",
+      "image": "../../assets/example/example.png",
+      "subImg1": "../../assets/example/example.png",
+      "subImg2": "../../assets/example/example.png",
+      "subImg3": "../../assets/example/example.png",
+      "subImg4": "../../assets/example/example.png",
+      "description": "asdfasdfasdfasdfasdfasdfasdf",
+      "genre": 4,
+      "id": 9
+    },
+    {
+      "title": "cloth10",
+      "image": "../../assets/example/example.png",
+      "subImg1": "../../assets/example/example.png",
+      "subImg2": "../../assets/example/example.png",
+      "subImg3": "../../assets/example/example.png",
+      "subImg4": "../../assets/example/example.png",
+      "description": "asdfasdfasdfasdfasdfasdfasdf",
+      "genre": 5,
+      "id": 10
+    },
+    {
+      "title": "cloth11",
+      "image": "../../assets/example/example.png",
+      "subImg1": "../../assets/example/example.png",
+      "subImg2": "../../assets/example/example.png",
+      "subImg3": "../../assets/example/example.png",
+      "subImg4": "../../assets/example/example.png",
+      "description": "asdfasdfasdfasdfasdfasdfasdf",
+      "genre": 6,
+      "id": 11
+    }
+  ]
+}

@@ -1,6 +1,8 @@
 <template>
-  <ec-header></ec-header>
-  <cloth-list></cloth-list>
+  <div id="app">
+    <ec-header></ec-header>
+    <cloth-list></cloth-list>
+  </div>
 </template>
 
 <script>
