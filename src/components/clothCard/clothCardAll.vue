@@ -1,23 +1,23 @@
 <template>
-  <div>
+  <div class="">
     <div
       class="card col-6 col-md-3"
       v-for="cloth in clothes"
       v-bind:key="cloth.id"
     >
-      <img v-bind:img-src="image" class="card-img-top" alt="" />
+      <img v-bind:src="cloth.image" class="card-img-top" alt="" />
       <div class="row" style="margin-left: 0; margin-right: 0">
         <div class="col-3">
-          <img v-bind:img-src="subImg1" class="card-sub-image" alt="" />
+          <img v-bind:src="cloth.subImg1" class="card-sub-image" alt="" />
         </div>
         <div class="col-3">
-          <img v-bind:img-src="subImg2" class="card-sub-image" alt="" />
+          <img v-bind:src="cloth.subImg2" class="card-sub-image" alt="" />
         </div>
         <div class="col-3">
-          <img v-bind:img-src="subImg3" class="card-sub-image" alt="" />
+          <img v-bind:src="cloth.subImg3" class="card-sub-image" alt="" />
         </div>
         <div class="col-3">
-          <img v-bind:img-src="subImg4" class="card-sub-image" alt="" />
+          <img v-bind:src="cloth.subImg4" class="card-sub-image" alt="" />
         </div>
       </div>
       <div class="card-body">
@@ -33,23 +33,10 @@
 </template>
 
 <script>
-import axios from 'axios';
 
 export default {
   name: 'clothCardAll',
-  data() {
-    return {
-      clothes: [],
-    };
-  },
-  methods: {
-    created() {
-      axios
-        .get('../../assets/data.json')
-        .then((response) => (this.clothes = response.data))
-        .catch((error) => console.log(error));
-    },
-  },
+    props: ['clothes'],
 };
 </script>
 
