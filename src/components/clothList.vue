@@ -20,9 +20,13 @@
           <div class="nav-link text-secondary">Pet</div>
         </li>
       </ul>
-      <cloth-card
-        v-bind:clothes="filterdClothes"
-      ></cloth-card>
+      <div class="card-wrap row row-cols-4" style="margin-left: 0; margin-right: 0">
+          <cloth-card
+            v-for="cloth in filterdClothes"
+            v-bind:key="cloth.id"
+            v-bind:cloth="cloth"
+          ></cloth-card>
+      </div>
     </div>
   </div>
 </template>

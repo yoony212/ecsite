@@ -1,22 +1,21 @@
 <template>
-  <div class="card-wrap row row-cols-4" style="margin-left: 0; margin-right: 0">
-    <div class="card col" v-for="cloth in clothes" v-bind:key="cloth.id">
-      <img v-bind:src="cloth.image" class="card-img-top" alt="" />
+    <div class="card col">
+      <img v-bind:src="mainImg" class="card-img-top" alt="" />
       <div
         class="row row-cols-4 img-sub"
         style="margin-left: 0; margin-right: 0"
       >
         <div class="col">
-          <img v-bind:src="cloth.subImg1" class="card-sub-image" alt="" />
+          <img v-bind:src="cloth.subImg1" class="card-sub-image" alt="" v-on:click="changeMainImg(cloth.subImg1)" />
         </div>
         <div class="col">
-          <img v-bind:src="cloth.subImg2" class="card-sub-image" alt="" />
+          <img v-bind:src="cloth.subImg2" class="card-sub-image" alt="" v-on:click="changeMainImg(cloth.subImg2)" />
         </div>
         <div class="col">
-          <img v-bind:src="cloth.subImg3" class="card-sub-image" alt="" />
+          <img v-bind:src="cloth.subImg3" class="card-sub-image" alt="" v-on:click="changeMainImg(cloth.subImg3)" />
         </div>
         <div class="col">
-          <img v-bind:src="cloth.subImg4" class="card-sub-image" alt="" />
+          <img v-bind:src="cloth.subImg4" class="card-sub-image" alt="" v-on:click="changeMainImg(cloth.subImg4)" />
         </div>
       </div>
       <div class="card-body text-center">
@@ -31,13 +30,22 @@
         >
       </div>
     </div>
-  </div>
 </template>
 
 <script>
 export default {
   name: 'clothCard',
-  props: ['clothes'],
+  props: ['cloth'],
+  data() {
+    return {
+      mainImg: this.cloth.image,
+    };
+  },
+  methods: {
+    changeMainImg(img) {
+      this.mainImg = img;
+    },
+  },
 };
 </script>
 
