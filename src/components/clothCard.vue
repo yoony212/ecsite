@@ -1,21 +1,12 @@
 <template>
     <div class="card col">
-      <img v-bind:src="mainImg" class="card-img-top" alt="" />
+      <img v-bind:src="mainImage" class="card-img-top" alt="" />
       <div
         class="row row-cols-4 img-sub"
         style="margin-left: 0; margin-right: 0"
       >
-        <div class="col">
-          <img v-bind:src="cloth.subImg1" class="card-sub-image" alt="" v-on:click="changeMainImg(cloth.subImg1)" />
-        </div>
-        <div class="col">
-          <img v-bind:src="cloth.subImg2" class="card-sub-image" alt="" v-on:click="changeMainImg(cloth.subImg2)" />
-        </div>
-        <div class="col">
-          <img v-bind:src="cloth.subImg3" class="card-sub-image" alt="" v-on:click="changeMainImg(cloth.subImg3)" />
-        </div>
-        <div class="col">
-          <img v-bind:src="cloth.subImg4" class="card-sub-image" alt="" v-on:click="changeMainImg(cloth.subImg4)" />
+        <div class="col" v-for="subImage in cloth.subImages" v-bind:key="subImage">
+          <img v-bind:src="subImage" class="card-sub-image" alt="" v-on:click="changeMainImage(subImage)" />
         </div>
       </div>
       <div class="card-body text-center">
@@ -38,12 +29,12 @@ export default {
   props: ['cloth'],
   data() {
     return {
-      mainImg: this.cloth.image,
+      mainImage: this.cloth.image,
     };
   },
   methods: {
-    changeMainImg(img) {
-      this.mainImg = img;
+    changeMainImage(image) {
+      this.mainImage = image;
     },
   },
 };
