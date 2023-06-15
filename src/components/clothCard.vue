@@ -1,18 +1,21 @@
 <template>
   <div class="card-wrap row row-cols-4" style="margin-left: 0; margin-right: 0">
-    <div class="card col" v-for="cloth in listWomans" v-bind:key="cloth.id">
+    <div class="card col" v-for="cloth in clothes" v-bind:key="cloth.id">
       <img v-bind:src="cloth.image" class="card-img-top" alt="" />
-      <div class="row img-sub" style="margin-left: 0; margin-right: 0">
-        <div class="col-3">
+      <div
+        class="row row-cols-4 img-sub"
+        style="margin-left: 0; margin-right: 0"
+      >
+        <div class="col">
           <img v-bind:src="cloth.subImg1" class="card-sub-image" alt="" />
         </div>
-        <div class="col-3">
+        <div class="col">
           <img v-bind:src="cloth.subImg2" class="card-sub-image" alt="" />
         </div>
-        <div class="col-3">
+        <div class="col">
           <img v-bind:src="cloth.subImg3" class="card-sub-image" alt="" />
         </div>
-        <div class="col-3">
+        <div class="col">
           <img v-bind:src="cloth.subImg4" class="card-sub-image" alt="" />
         </div>
       </div>
@@ -33,9 +36,47 @@
 
 <script>
 export default {
-  name: 'clothCardWoman',
-  props: ['listWomans'],
+  name: 'clothCard',
+  props: ['clothes'],
 };
 </script>
 
-<style></style>
+<style>
+@media (min-width: 768px) {
+  .card-wrap {
+    gap: 1%;
+  }
+  .card {
+    padding: 0.5rem;
+  }
+  .card-img-top {
+    margin-bottom: 1rem;
+  }
+  .img-sub {
+    gap: 1%;
+  }
+  .card-sub-image {
+    max-width: 100%;
+  }
+}
+[v-cloak] {
+  display: none;
+}
+.img-sub > * {
+  padding: 0 !important;
+}
+.row-cols-4 > * {
+  width: 24% !important;
+}
+.card-link {
+  border-bottom: 1px solid #000;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+.card-link:hover {
+  border-bottom-color: transparent;
+  opacity: 0.7;
+}
+</style>
