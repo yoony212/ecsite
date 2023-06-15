@@ -25,19 +25,19 @@
         v-show="activeTab === 'tabs1'"
       ></cloth-card-all>
       <cloth-card-man
-        v-bind:listMans="listMans"
+        v-bind:listMans="sortMan"
         v-show="activeTab === 'tabs2'"
       ></cloth-card-man>
       <cloth-card-woman
-        v-bind:listWomans="listWomans"
+        v-bind:listWomans="sortWoman"
         v-show="activeTab === 'tabs3'"
       ></cloth-card-woman>
       <cloth-card-kid
-        v-bind:listKids="listKids"
+        v-bind:listKids="sortKid"
         v-show="activeTab === 'tabs4'"
       ></cloth-card-kid>
       <cloth-card-pet
-        v-bind:listPets="listPets"
+        v-bind:listPets="sortPet"
         v-show="activeTab === 'tabs5'"
       ></cloth-card-pet>
     </div>
@@ -50,6 +50,7 @@ import clothCardMan from './clothCard/clothCardMan.vue';
 import clothCardWoman from './clothCard/clothCardWoman.vue';
 import clothCardKid from './clothCard/clothCardKid.vue';
 import clothCardPet from './clothCard/clothCardPet.vue';
+import axios from 'axios';
 
 export default {
   name: 'clothList',
@@ -62,190 +63,14 @@ export default {
   },
   data() {
     return {
-      clothes: [
-        {
-          title: 'cloth1',
-          image: '/main1.jpg',
-          subImg1: '/sub1.jpg',
-          subImg2: '/sub2.jpg',
-          subImg3: '/sub3.jpg',
-          subImg4: '/sub4.jpg',
-          price: '¥ 8,990',
-          genre: 1,
-          id: 1,
-        },
-        {
-          title: 'cloth2',
-          image: '/sub1.jpg',
-          subImg1: '/main1.jpg',
-          subImg2: '/sub2.jpg',
-          subImg3: '/sub3.jpg',
-          subImg4: '/sub4.jpg',
-          price: '¥ 8,990',
-          genre: 2,
-          id: 2,
-        },
-        {
-          title: 'cloth3',
-          image: '/sub2.jpg',
-          subImg1: '/sub1.jpg',
-          subImg2: '/main1.jpg',
-          subImg3: '/sub3.jpg',
-          subImg4: '/sub4.jpg',
-          price: '¥ 8,990',
-          genre: 3,
-          id: 3,
-        },
-        {
-          title: 'cloth4',
-          image: '/sub3.jpg',
-          subImg1: '/sub1.jpg',
-          subImg2: '/sub2.jpg',
-          subImg3: '/main1.jpg',
-          subImg4: '/sub4.jpg',
-          price: '¥ 8,990',
-          genre: 4,
-          id: 4,
-        },
-        {
-          title: 'cloth5',
-          image: '/main1.jpg',
-          subImg1: '/sub1.jpg',
-          subImg2: '/sub2.jpg',
-          subImg3: '/sub3.jpg',
-          subImg4: '/sub4.jpg',
-          price: '¥ 8,990',
-          genre: 1,
-          id: 5,
-        },
-        {
-          title: 'cloth6',
-          image: '/sub1.jpg',
-          subImg1: '/main1.jpg',
-          subImg2: '/sub2.jpg',
-          subImg3: '/sub3.jpg',
-          subImg4: '/sub4.jpg',
-          price: '¥ 8,990',
-          genre: 2,
-          id: 6,
-        },
-        {
-          title: 'cloth7',
-          image: '/sub2.jpg',
-          subImg1: '/sub1.jpg',
-          subImg2: '/main1.jpg',
-          subImg3: '/sub3.jpg',
-          subImg4: '/sub4.jpg',
-          price: '¥ 8,990',
-          genre: 3,
-          id: 7,
-        },
-        {
-          title: 'cloth8',
-          image: '/sub3.jpg',
-          subImg1: '/sub1.jpg',
-          subImg2: '/sub2.jpg',
-          subImg3: '/main1.jpg',
-          subImg4: '/sub4.jpg',
-          price: '¥ 8,990',
-          genre: 4,
-          id: 8,
-        },
-        {
-          title: 'cloth9',
-          image: '/main1.jpg',
-          subImg1: '/sub1.jpg',
-          subImg2: '/sub2.jpg',
-          subImg3: '/sub3.jpg',
-          subImg4: '/sub4.jpg',
-          price: '¥ 8,990',
-          genre: 1,
-          id: 9,
-        },
-        {
-          title: 'cloth10',
-          image: '/sub1.jpg',
-          subImg1: '/main1.jpg',
-          subImg2: '/sub2.jpg',
-          subImg3: '/sub3.jpg',
-          subImg4: '/sub4.jpg',
-          price: '¥ 8,990',
-          genre: 2,
-          id: 10,
-        },
-        {
-          title: 'cloth11',
-          image: '/sub2.jpg',
-          subImg1: '/sub1.jpg',
-          subImg2: '/main1.jpg',
-          subImg3: '/sub3.jpg',
-          subImg4: '/sub4.jpg',
-          price: '¥ 8,990',
-          genre: 3,
-          id: 11,
-        },
-        {
-          title: 'cloth11',
-          image: '/sub3.jpg',
-          subImg1: '/sub1.jpg',
-          subImg2: '/sub2.jpg',
-          subImg3: '/main1.jpg',
-          subImg4: '/sub4.jpg',
-          price: '¥ 8,990',
-          genre: 4,
-          id: 12,
-        },
-        {
-          title: 'cloth13',
-          image: '/main1.jpg',
-          subImg1: '/sub1.jpg',
-          subImg2: '/sub2.jpg',
-          subImg3: '/sub3.jpg',
-          subImg4: '/sub4.jpg',
-          price: '¥ 8,990',
-          genre: 1,
-          id: 13,
-        },
-        {
-          title: 'cloth14',
-          image: '/sub1.jpg',
-          subImg1: '/main1.jpg',
-          subImg2: '/sub2.jpg',
-          subImg3: '/sub3.jpg',
-          subImg4: '/sub4.jpg',
-          price: '¥ 8,990',
-          genre: 2,
-          id: 14,
-        },
-        {
-          title: 'cloth15',
-          image: '/sub2.jpg',
-          subImg1: '/sub1.jpg',
-          subImg2: '/main1.jpg',
-          subImg3: '/sub3.jpg',
-          subImg4: '/sub4.jpg',
-          price: '¥ 8,990',
-          genre: 3,
-          id: 15,
-        },
-        {
-          title: 'cloth16',
-          image: '/sub3.jpg',
-          subImg1: '/sub1.jpg',
-          subImg2: '/sub2.jpg',
-          subImg3: '/main1.jpg',
-          subImg4: '/sub4.jpg',
-          price: '¥ 8,990',
-          genre: 4,
-          id: 16,
-        },
-      ],
+      clothes: [],
       activeTab: 'tabs1',
     };
   },
   computed: {
     sortMan: function () {
       const listMans = this.clothes.filter((cloth) => cloth.genre === 1);
+      console.log(listMans);
       return listMans;
     },
     sortWoman: function () {
@@ -265,6 +90,12 @@ export default {
     showTab: function (tab) {
       this.activeTab = tab;
     },
+  },
+  created() {
+    axios.get('/clothes').then((response) => {
+      console.log(1);
+      console.log(response);
+    });
   },
 };
 </script>

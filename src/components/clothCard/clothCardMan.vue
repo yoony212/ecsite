@@ -34,7 +34,7 @@
 <script>
 export default {
   name: 'clothCardMan',
-  props: ['listmMans'],
+  props: ['listMans'],
 };
 </script>
 

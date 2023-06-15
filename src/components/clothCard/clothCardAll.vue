@@ -46,6 +46,7 @@ export default {
   .card-wrap {
     gap: 1%;
   }
+
   .card {
     padding: 0.5rem;
   }
