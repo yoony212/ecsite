@@ -1,23 +1,23 @@
 <template>
   <div id="main-container" class="container-fluid">
     <div id="card-container" class="card-container">
-      <ul id="genre-bar" class="nav">
+      <ul id="genre-bar" class="nav nav-tabs">
         <li id="all" class="nav-item" v-on:click="changeGenre(ALL)">
-          <div class="nav-link text-secondary active" aria-current="page">
+          <div class="nav-link text-secondary" :class="selectedGenre === ALL ? 'active' : ''" aria-current="page">
             All
           </div>
         </li>
         <li id="man" class="nav-item" v-on:click="changeGenre(MAN)">
-          <div class="nav-link text-secondary">Man</div>
+          <div class="nav-link text-secondary" :class="selectedGenre === MAN ? 'active' : ''">Man</div>
         </li>
         <li id="woman" class="nav-item" v-on:click="changeGenre(WOMAN)">
-          <div class="nav-link text-secondary">Woman</div>
+          <div class="nav-link text-secondary" :class="selectedGenre === WOMAN ? 'active' : ''">Woman</div>
         </li>
         <li id="kid" class="nav-item" v-on:click="changeGenre(KID)">
-          <div class="nav-link text-secondary">Kid</div>
+          <div class="nav-link text-secondary" :class="selectedGenre === KID ? 'active' : ''">Kid</div>
         </li>
         <li id="pet" class="nav-item" v-on:click="changeGenre(PET)">
-          <div class="nav-link text-secondary">Pet</div>
+          <div class="nav-link text-secondary" :class="selectedGenre === PET ? 'active' : ''">Pet</div>
         </li>
       </ul>
       <div class="card-wrap row row-cols-4" style="margin-left: 0; margin-right: 0">
