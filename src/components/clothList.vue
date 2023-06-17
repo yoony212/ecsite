@@ -3,21 +3,19 @@
     <div id="card-container" class="card-container">
       <ul id="genre-bar" class="nav">
         <li id="all" class="nav-item" v-on:click="showTab('tabs1')">
-          <div class="nav-link text-secondary active" aria-current="page">
-            All
-          </div>
+          <div class="nav-link active" aria-current="page">All</div>
         </li>
         <li id="man" class="nav-item" v-on:click="showTab('tabs2')">
-          <div class="nav-link text-secondary">Man</div>
+          <div class="nav-link">Man</div>
         </li>
         <li id="woman" class="nav-item" v-on:click="showTab('tabs3')">
-          <div class="nav-link text-secondary">Woman</div>
+          <div class="nav-link">Woman</div>
         </li>
         <li id="kid" class="nav-item" v-on:click="showTab('tabs4')">
-          <div class="nav-link text-secondary">Kid</div>
+          <div class="nav-link">Kid</div>
         </li>
         <li id="pet" class="nav-item" v-on:click="showTab('tabs5')">
-          <div class="nav-link text-secondary">Pet</div>
+          <div class="nav-link">Pet</div>
         </li>
       </ul>
       <cloth-card-all
@@ -67,10 +65,14 @@ export default {
       activeTab: 'tabs1',
     };
   },
+  created() {
+    axios.get('/clothes').then((response) => {
+      this.clothes = response.data;
+    });
+  },
   computed: {
     sortMan: function () {
       const listMans = this.clothes.filter((cloth) => cloth.genre === 1);
-      console.log(listMans);
       return listMans;
     },
     sortWoman: function () {
@@ -91,12 +93,6 @@ export default {
       this.activeTab = tab;
     },
   },
-  created() {
-    axios.get('/clothes').then((response) => {
-      console.log(1);
-      console.log(response);
-    });
-  },
 };
 </script>
 
@@ -105,6 +101,14 @@ export default {
   #genre-bar {
     margin-bottom: 1rem;
   }
+}
+#genre-bar .nav-item .nav-link {
+  color: black;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+#genre-bar .nav-item .nav-link:hover {
+  opacity: 1;
 }
 .active {
   color: blue;

@@ -2,17 +2,20 @@
   <div class="card-wrap row row-cols-4" style="margin-left: 0; margin-right: 0">
     <div class="card col" v-for="cloth in listMans" v-bind:key="cloth.id">
       <img v-bind:src="cloth.image" class="card-img-top" alt="" />
-      <div class="row img-sub" style="margin-left: 0; margin-right: 0">
-        <div class="col-3">
+      <div
+        class="row row-cols-4 img-sub"
+        style="margin-left: 0; margin-right: 0"
+      >
+        <div class="col">
           <img v-bind:src="cloth.subImg1" class="card-sub-image" alt="" />
         </div>
-        <div class="col-3">
+        <div class="col">
           <img v-bind:src="cloth.subImg2" class="card-sub-image" alt="" />
         </div>
-        <div class="col-3">
+        <div class="col">
           <img v-bind:src="cloth.subImg3" class="card-sub-image" alt="" />
         </div>
-        <div class="col-3">
+        <div class="col">
           <img v-bind:src="cloth.subImg4" class="card-sub-image" alt="" />
         </div>
       </div>
