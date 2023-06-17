@@ -208,5 +208,23 @@
       "genre": 4,
       "id": 16
     }
+  ],
+  "genres": [
+    {
+      "id": 1,
+      "name": "Man"
+    },
+    {
+      "id": 2,
+      "name": "Woman"
+    },
+    {
+      "id": 3,
+      "name": "Kid"
+    },
+    {
+      "id": 4,
+      "name": "Pet"
+    }
   ]
 }

@@ -2,22 +2,13 @@
   <div id="main-container" class="container-fluid">
     <div id="card-container" class="card-container">
       <ul id="genre-bar" class="nav nav-tabs">
-        <li id="all" class="nav-item" v-on:click="changeGenre(ALL)">
-          <div class="nav-link text-secondary" :class="activeClass(ALL)" aria-current="page">
+        <li class="nav-item" v-on:click="changeGenre(0)">
+          <div class="nav-link text-secondary" :class="activeClass(0)" aria-current="page">
             All
           </div>
         </li>
-        <li id="man" class="nav-item" v-on:click="changeGenre(MAN)">
-          <div class="nav-link text-secondary" :class="activeClass(MAN)">Man</div>
-        </li>
-        <li id="woman" class="nav-item" v-on:click="changeGenre(WOMAN)">
-          <div class="nav-link text-secondary" :class="activeClass(WOMAN)">Woman</div>
-        </li>
-        <li id="kid" class="nav-item" v-on:click="changeGenre(KID)">
-          <div class="nav-link text-secondary" :class="activeClass(KID)">Kid</div>
-        </li>
-        <li id="pet" class="nav-item" v-on:click="changeGenre(PET)">
-          <div class="nav-link text-secondary" :class="activeClass(PET)">Pet</div>
+        <li v-for="genre in genres" :key="genre.id" class="nav-item" v-on:click="changeGenre(genre.id)" >
+          <div class="nav-link text-secondary" :class="activeClass(genre.id)">{{genre.name}}</div>
         </li>
       </ul>
       <div class="card-wrap row row-cols-4" style="margin-left: 0; margin-right: 0">
@@ -42,21 +33,18 @@ export default {
   },
   data() {
     return {
+      genres: [],
       clothes: [],
       selectedGenre: 0,
-      ALL: 0,
-      MAN: 1,
-      WOMAN: 2,
-      KID: 3,
-      PET: 4,
     };
   },
   async created() {
+    this.genres = await this.getGenres()
     this.clothes = await this.getClothes()
   },
   computed: {
     filterdClothes() {
-      if (this.selectedGenre === this.ALL) {
+      if (this.selectedGenre === 0) {
         return this.clothes
       } else {
         return this.clothes.filter((cloth) => cloth.genre === this.selectedGenre)
@@ -64,12 +52,16 @@ export default {
     },
   },
   methods: {
-    changeGenre(genre) {
-      this.selectedGenre = genre;
+    async getGenres() {
+      const { data } = await axios.get('/genres');
+      return data;
     },
     async getClothes() {
       const { data } = await axios.get('/clothes');
       return data;
+    },
+    changeGenre(genre) {
+      this.selectedGenre = genre;
     },
     activeClass(genre) {
       return this.selectedGenre === genre ? 'active' : ''
