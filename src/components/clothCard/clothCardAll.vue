@@ -1,5 +1,9 @@
 <template>
-  <div class="card-wrap row row-cols-4" style="margin-left: 0; margin-right: 0">
+  <div
+    id="card-wrap"
+    class="card-wrap row row-cols-4"
+    style="margin-left: 0; margin-right: 0"
+  >
     <div class="card col" v-for="cloth in clothes" v-bind:key="cloth.id">
       <img v-bind:src="cloth.image" class="card-img-top" alt="" />
       <div
@@ -47,36 +51,36 @@ export default {
     gap: 1%;
   }
 
-  .card {
+  #card-wrap .card {
     padding: 0.5rem;
   }
-  .card-img-top {
+  #card-wrap .card-img-top {
     margin-bottom: 1rem;
   }
-  .img-sub {
+  #card-wrap .img-sub {
     gap: 1%;
   }
-  .card-sub-image {
+  #card-wrap .card-sub-image {
     max-width: 100%;
   }
 }
 [v-cloak] {
   display: none;
 }
-.img-sub > * {
+#card-wrap .img-sub > * {
   padding: 0 !important;
 }
 .row-cols-4 > * {
   width: 24% !important;
 }
-.card-link {
+#card-wrap .card-link {
   border-bottom: 1px solid #000;
   font-size: 0.8rem;
   transition: all 0.3s ease;
   opacity: 1;
 }
 
-.card-link:hover {
+#card-wrap .card-link:hover {
   border-bottom-color: transparent;
   opacity: 0.7;
 }

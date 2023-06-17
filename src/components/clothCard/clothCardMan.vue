@@ -1,5 +1,9 @@
 <template>
-  <div class="card-wrap row row-cols-4" style="margin-left: 0; margin-right: 0">
+  <div
+    id="card-wrap"
+    class="card-wrap row row-cols-4"
+    style="margin-left: 0; margin-right: 0"
+  >
     <div class="card col" v-for="cloth in listMans" v-bind:key="cloth.id">
       <img v-bind:src="cloth.image" class="card-img-top" alt="" />
       <div
